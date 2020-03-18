@@ -1,4 +1,11 @@
 <?php
+/*
+Staff would build links in articles.
+
+I would ask for URL;s of said links.
+
+I would run it through this script to check links to money sites and validity of article url.
+*/
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
