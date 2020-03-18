@@ -9,7 +9,7 @@ global $projectID;
 $projectID = $_SERVER['argv'][1];
 $reportingType = isset($_SERVER['argv'][2]) ? 'Monthly' : 'Manual';
 
-$db_connection = mysql_connect('localhost', 'webdev', '86753Oh9');
+$db_connection = mysql_connect('localhost', 'fds', 'fdsfdsfsfas');
 mysql_select_db ('webeditors_billing');
 $query = "SELECT * FROM mod_seo_reports WHERE project_id ='$projectID'";
 $result = mysql_query($query);
@@ -104,7 +104,7 @@ fwrite($ask_res,$serialize_askDataArray);
 fclose($ask_res);
 
 # some reports take so long to execute we will connect again.
-$db_connection = mysql_connect('localhost', 'webdev', '86753Oh9');
+$db_connection = mysql_connect('localhost', 'fdsafdsa', 'fdsafdsa');
 mysql_select_db ('webeditors_billing');
 $query2 = "INSERT INTO mod_seo_report_raw_data set project_id = '$projectID', type='$reportingType', date_time = '$datestring'";
 mysql_query($query2);
@@ -113,8 +113,8 @@ mysql_close($db_connection);
 $to      = 'seoreports@webeditors.com';
 $subject = 'Your Seo Report is Ready - ' . $domain;
 $message = "cralwer.php executed Project id: $projectID  - Reporting Type: $reportingType  - Domain: $domain";
-$headers = 'From: alexander@webeditors.com' . "\r\n" .
-'Reply-To: alexander@webeditors.com' . "\r\n" .
+$headers = 'From: alex@webeditors.com' . "\r\n" .
+'Reply-To: alex@webeditors.com' . "\r\n" .
 'X-Mailer: PHP/' . phpversion();
 mail($to, $subject, $message, $headers);
 
@@ -375,8 +375,8 @@ function reportError($err)
     $to      = 'seoreports@webeditors.com';
     $subject = 'Cralwer Error';
     $message = $err;
-    $headers = 'From: alexander@webeditors.com' . "\r\n" .
-    'Reply-To: alexander@webeditors.com' . "\r\n" .
+    $headers = 'From: alex@webeditors.com' . "\r\n" .
+    'Reply-To: alex@webeditors.com' . "\r\n" .
     'X-Mailer: PHP/' . phpversion();
     mail($to, $subject, $message, $headers);
 }
