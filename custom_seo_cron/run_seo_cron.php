@@ -45,7 +45,7 @@ if (flock($fp, LOCK_EX))
     mysql_close($db_connection);
     
     // re-open db connection... incase it took a while fo the loop to run
-    $db_connection = mysql_connect('localhost', 'webdev', '86753Oh9');
+    $db_connection = mysql_connect('localhost', 'gfdsgfds', 'fgdsgfsdgfds');
     mysql_select_db ('webeditors_billing');
     
     $query2 = "UPDATE mod_seo_reports SET cron_status = 'Completed' WHERE id = '$id'";
